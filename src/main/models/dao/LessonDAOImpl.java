@@ -17,9 +17,7 @@ import java.util.ArrayList;
 public class LessonDAOImpl implements LessonDao<Lesson>
 {
 
-    static {
-        PropertyConfigurator.configure("./src/main/logger/log4j.properties");
-    }
+
     private static final Logger logger = Logger.getLogger(LessonDAOImpl.class);
 
 

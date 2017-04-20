@@ -35,7 +35,7 @@ public class StudentAddRequestListener implements ServletRequestListener
 
     private void sendMail(ServletRequestEvent servletRequestEvent)
     {
-        String myParam = servletRequestEvent.getServletContext().getInitParameter("ADMIN_MAIL");
-        SendMailService.sendMailTLL("Student has added", myParam);
+//        String myParam = servletRequestEvent.getServletContext().getInitParameter("ADMIN_MAIL");
+//        SendMailService.sendMailTLL("Student has added", myParam);
     }
 }

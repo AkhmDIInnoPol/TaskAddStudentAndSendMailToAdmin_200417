@@ -17,9 +17,7 @@ import java.util.ArrayList;
  */
 public class JournalDAOImpl implements JournalDAO<Journal>
 {
-    static {
-        PropertyConfigurator.configure("./src/main/logger/log4j.properties");
-    }
+
     private static final Logger logger = Logger.getLogger(LessonDAOImpl.class);
 
 

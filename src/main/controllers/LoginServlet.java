@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet
         if (userService.auth(login, pass) != null)
         {
             req.getSession().setAttribute("userLogin", login);
-            logger.debug("userLogin" + login);
+            logger.debug("userLogin" + login + "logged");
             resp.sendRedirect(req.getContextPath() + "/listStudents");
 
         }

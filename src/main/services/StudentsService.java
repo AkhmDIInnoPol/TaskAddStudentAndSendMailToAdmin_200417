@@ -20,13 +20,15 @@ public class StudentsService implements StudentServiceInterface
         return studentDAO.getAll();
     }
 
-    public void addStudent(String name, String age, String groupId) {
-
-        int ageInt = Integer.parseInt(age);
-        int groupIdInt = Integer.parseInt(groupId);
-        Student student = new Student();
-
+    public void addStudent(Student student) {
 
         studentDAO.insert(student);
     }
+
+
+    public void editStudent(Student student)
+    {
+        studentDAO.update(student);
+    }
+
 }

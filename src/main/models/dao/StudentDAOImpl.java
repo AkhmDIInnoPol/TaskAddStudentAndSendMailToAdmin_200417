@@ -17,9 +17,7 @@ import java.util.ArrayList;
 public class StudentDAOImpl implements StudentDAO<Student>
 {
 
-    static {
-        PropertyConfigurator.configure("log4j.properties");
-    }
+
     private static final Logger logger = Logger.getLogger(StudyGroupDAOImpl.class);
 
 
@@ -146,8 +144,8 @@ public class StudentDAOImpl implements StudentDAO<Student>
                     preparedStatement.setInt(3, student.getAge());
                     preparedStatement.setInt(4, student.getGroupId());
 
-                    StudyGroup studyGroup = student.getStudyGroup();
-                    studyGroupConnector.insert(studyGroup);
+//                    StudyGroup studyGroup = student.getStudyGroup();
+//                    studyGroupConnector.insert(studyGroup);
 
                     preparedStatement.executeUpdate();
                 }
@@ -164,8 +162,8 @@ public class StudentDAOImpl implements StudentDAO<Student>
                     preparedStatement.setInt(2, student.getAge());
                     preparedStatement.setInt(3, student.getGroupId());
 
-                    StudyGroup studyGroup = student.getStudyGroup();
-                    studyGroupConnector.insert(studyGroup);
+//                    StudyGroup studyGroup = student.getStudyGroup();
+//                    studyGroupConnector.insert(studyGroup);
 
                     preparedStatement.executeUpdate();
                 }
@@ -188,8 +186,8 @@ public class StudentDAOImpl implements StudentDAO<Student>
             preparedStatement.setInt(2,student.getAge());
             preparedStatement.setInt(3,student.getGroupId());
             preparedStatement.setInt(4,student.getId());
-            StudyGroup studyGroup = student.getStudyGroup();
-            studyGroupConnector.update(studyGroup);
+//            StudyGroup studyGroup = student.getStudyGroup();
+//            studyGroupConnector.update(studyGroup);
 
 
 

@@ -12,9 +12,12 @@ import javax.servlet.ServletContextListener;
 public class AppStartListener implements ServletContextListener
 {
 
-    public void contextInitialized(ServletContextEvent servletContextEvent) {
-//        PropertyConfigurator.configure("log4j.properties");
+    static {
+        PropertyConfigurator.configure(AppStartListener.class.getClassLoader()
+        .getResource("log4j.properties"));
+    }
 
+    public void contextInitialized(ServletContextEvent servletContextEvent) {
         sendMail(servletContextEvent);
     }
 
@@ -26,7 +29,7 @@ public class AppStartListener implements ServletContextListener
 
     private void sendMail(ServletContextEvent sce)
     {
-        String myParam = sce.getServletContext().getInitParameter("ADMIN_MAIL");
-        SendMailService.sendMailTLL("Application started", myParam);
+//        String myParam = sce.getServletContext().getInitParameter("ADMIN_MAIL");
+//        SendMailService.sendMailTLL("Application started", myParam);
     }
 }

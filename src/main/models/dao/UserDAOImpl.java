@@ -9,10 +9,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.beans.PropertyVetoException;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -20,9 +17,7 @@ import java.util.ArrayList;
  */
 public class UserDAOImpl implements UserDAO<User>
 {
-    static {
-        PropertyConfigurator.configure("./src/main/logger/log4j.properties");
-    }
+
     private static final Logger logger = Logger.getLogger(UserDAOImpl.class);
     private Connection connection;
 
@@ -53,17 +48,21 @@ public class UserDAOImpl implements UserDAO<User>
         User user = new User();
 
         try {
-            Statement statement = connection.createStatement();
-            ResultSet result = statement.executeQuery("select * from public.lesson " +
-                    "WHERE id = " + login + " AND " + "password = " + password);
+            PreparedStatement statement = connection
+                    .prepareStatement( "SELECT * FROM user_st WHERE login = ? AND password = ?");
 
-            result.next();
+            statement.setString(1, login);
+            statement.setString(2, password);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                user.setId(resultSet.getInt("id"));
+                user.setLogin(resultSet.getString("login"));
+                user.setPassword(resultSet.getString("password"));
+            }
 
 
 
-            user.setId(result.getInt("id"));
-            user.setLogin(result.getString("login"));
-            user.setPassword(result.getString("password"));
 
         }
         catch (SQLException ex)

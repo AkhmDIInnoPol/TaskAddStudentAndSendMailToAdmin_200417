@@ -12,8 +12,8 @@ public interface StudentServiceInterface
 
     List<Student> getAllStudents();
 
-    void addStudent(String name, String age, String groupId);
+    void addStudent(Student student);
 
-
+    void editStudent(Student student);
 
 }

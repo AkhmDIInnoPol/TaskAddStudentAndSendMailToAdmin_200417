@@ -17,9 +17,6 @@ public class StudyGroupDAOImpl implements StudyGroupDAO<StudyGroup>
 {
 
 
-    static {
-        PropertyConfigurator.configure("log4j.properties");
-    }
     private static final Logger logger = Logger.getLogger(StudyGroupDAOImpl.class);
 
 
