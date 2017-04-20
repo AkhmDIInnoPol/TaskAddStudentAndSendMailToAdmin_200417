@@ -1,0 +1,7 @@
+INSERT INTO study_group
+(name)
+VALUES ('STC04');
+
+INSERT INTO student
+(id, name, age, group_id)
+VALUES (3, 'Sidorov',23,1);

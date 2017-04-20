@@ -1,0 +1,27 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="StudentsProjectTemplate:war exploded">
+    <output-path>$PROJECT_DIR$/target/stc5.students</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="StudentsProjectTemplate" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.jolbox:bonecp:0.8.0.RELEASE" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:15.0" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.2" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: org.postgresql:postgresql:9.4-1202-jdbc42" />
+          <element id="library" level="project" name="Maven: javax:javaee-api:7.0" />
+          <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.0" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/stc5.students/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="StudentsProjectTemplate/web/Web" />
+    </root>
+  </artifact>
+</component>
